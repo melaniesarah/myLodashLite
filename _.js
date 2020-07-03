@@ -57,6 +57,12 @@ const _ = {
         if (!dropNum) dropNum = 1;
 
         return array.slice(dropNum);
+    },
+    dropWhile(array, predicate) {
+        const dropNum = array.findIndex((val, index) => {
+            return !predicate(val, index, array);
+        });
+        return array.slice(dropNum);
     }
 };
 
