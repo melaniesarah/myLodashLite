@@ -36,7 +36,17 @@ const _ = {
         if (key in obj) return true;
         return false;
     },
-    
+    invert(obj) {
+        const keys = Object.keys(obj);
+        const values = Object.values(obj);
+        const invertedObject = {};
+
+        values.forEach((value, index) => {
+            invertedObject[value] = keys[index];
+        })
+        
+        return invertedObject;
+    }
 };
 
 
