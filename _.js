@@ -21,6 +21,16 @@ const _ = {
     },
     words(string) {
         return string.split(" ");
+    },
+    pad(string, length) {
+        if (string.length > length) return string;
+
+        const totalPadding = length - string.length;
+        const beginningPadding = Math.floor(totalPadding / 2);
+        const endingPadding = totalPadding - beginningPadding;
+        const paddedString = ' '.repeat(beginningPadding) + string + ' '.repeat(endingPadding);
+
+        return paddedString;
     }
 };
 
