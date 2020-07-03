@@ -52,6 +52,11 @@ const _ = {
             if (func(value)) return key;
         }
         return undefined;
+    },
+    drop(array, dropNum) {
+        if (!dropNum) dropNum = 1;
+
+        return array.slice(dropNum);
     }
 };
 
