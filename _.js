@@ -46,6 +46,12 @@ const _ = {
         })
         
         return invertedObject;
+    },
+    findKey(obj, func) {
+        for (const [key, value] of Object.entries(obj)) {
+            if (func(value)) return key;
+        }
+        return undefined;
     }
 };
 
