@@ -31,7 +31,12 @@ const _ = {
         const paddedString = ' '.repeat(beginningPadding) + string + ' '.repeat(endingPadding);
 
         return paddedString;
-    }
+    },
+    has(obj, key) {
+        if (key in obj) return true;
+        return false;
+    },
+    
 };
 
 
