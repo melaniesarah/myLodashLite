@@ -1,4 +1,10 @@
-
+const _ = {
+    clamp(number, lowerBound, upperBound) {
+        const upperClampedValue = Math.min(number, upperBound);
+        const value = Math.max(upperClampedValue, lowerBound);
+        return value;
+    }
+};
 
 
 
