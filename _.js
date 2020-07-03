@@ -63,6 +63,24 @@ const _ = {
             return !predicate(val, index, array);
         });
         return array.slice(dropNum);
+    },
+    chunk(array, size = 1) {
+        if (size > array.length) return [array];
+
+        const arrays = [];
+        let i = 0;
+        do {
+            const arrayChunk = array.slice(i, i + size);
+            arrays.push(arrayChunk);
+            i += size;  
+        } while (array.length - i >= size);
+
+        if (array.length - i !== 0) {
+            const arrayChunk = array.slice(i);
+            arrays.push(arrayChunk);
+        }
+
+        return arrays;
     }
 };
 
